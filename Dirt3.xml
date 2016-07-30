@@ -1,0 +1,75 @@
+<sensor>
+	<tracker>Microsoft-v2</tracker>
+	<mode>Full Body</mode>
+	<mirrormode>true</mirrormode>
+	<smoothing>true</smoothing>
+	<smoothingfactor>0.5</smoothingfactor>
+	<correction>0.5</correction>
+	<prediction>0.5</prediction>
+	<jitter>0.05</jitter>
+	<deviation>0.04</deviation>
+</sensor>
+<server>
+	<transformations>Global coordinates</transformations>
+	<automaticassignment>true</automaticassignment>
+</server>
+<display>
+	<showviewerwindow>true</showviewerwindow>
+	<background>Depth</background>
+	<foreground>Depth</foreground>
+	<showconsolewindow>true</showconsolewindow>
+	<movechildwindows>true</movechildwindows>
+	<savewindowlayout>false</savewindowlayout>
+</display>
+<gestures>
+	<gesture name="Move Forward" timeout="0" enabled="true" outputloop="false" outputtimeout="0">
+		<input type="1">
+			<descriptor>left hand</descriptor>
+			<descriptor>above</descriptor>
+			<descriptor>neck</descriptor>
+			<descriptor>at least</descriptor>
+			<descriptor>10</descriptor>
+			<descriptor>centimeters</descriptor>
+		</input>
+		<output type="0">
+			<descriptor>hold</descriptor>
+			<descriptor>w</descriptor>
+			<descriptor>until complete</descriptor>
+			<descriptor>0</descriptor>
+		</output>
+	</gesture>
+	<gesture name="Turn Left" timeout="0" enabled="true" outputloop="false" outputtimeout="0">
+		<input type="1">
+			<descriptor>right hand</descriptor>
+			<descriptor>to the left of</descriptor>
+			<descriptor>torso</descriptor>
+			<descriptor>at least</descriptor>
+			<descriptor>10</descriptor>
+			<descriptor>centimeters</descriptor>
+		</input>
+		<output type="0">
+			<descriptor>hold</descriptor>
+			<descriptor>a</descriptor>
+			<descriptor>until complete</descriptor>
+			<descriptor>0</descriptor>
+		</output>
+	</gesture>
+	<gesture name="Turn Right" timeout="0" enabled="true" outputloop="false" outputtimeout="0">
+		<input type="1">
+			<descriptor>right hand</descriptor>
+			<descriptor>to the right of</descriptor>
+			<descriptor>torso</descriptor>
+			<descriptor>at least</descriptor>
+			<descriptor>10</descriptor>
+			<descriptor>centimeters</descriptor>
+		</input>
+		<output type="0">
+			<descriptor>hold</descriptor>
+			<descriptor>d</descriptor>
+			<descriptor>until complete</descriptor>
+			<descriptor>0</descriptor>
+		</output>
+	</gesture>
+</gestures>
+<plugins/>
+

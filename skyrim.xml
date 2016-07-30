@@ -11,77 +11,80 @@
 </sensor>
 <server>
 	<transformations>Global coordinates</transformations>
-	<automaticassignment>true</automaticassignment>
+	<automaticassignment>false</automaticassignment>
+	<tracker0>1</tracker0>
+	<tracker1>2</tracker1>
+	<tracker2/>
+	<tracker3/>
 </server>
 <display>
 	<showviewerwindow>true</showviewerwindow>
 	<background>Depth</background>
 	<foreground>Depth</foreground>
 	<showconsolewindow>true</showconsolewindow>
-	<movechildwindows>true</movechildwindows>
+	<movechildwindows>false</movechildwindows>
 	<savewindowlayout>false</savewindowlayout>
 </display>
 <gestures>
-	<gesture name="Move forward" timeout="0" enabled="true" outputloop="true" outputtimeout="0">
-		<input type="1">
-			<descriptor>right foot</descriptor>
-			<descriptor>in front of</descriptor>
-			<descriptor>waist</descriptor>
+	<gesture name="Right Side" timeout="0" enabled="true" outputloop="false" outputtimeout="0">
+		<input type="0">
+			<descriptor>lean</descriptor>
+			<descriptor>right</descriptor>
 			<descriptor>at least</descriptor>
-			<descriptor>10</descriptor>
+			<descriptor>5</descriptor>
+			<descriptor>degrees</descriptor>
+		</input>
+		<output type="0">
+			<descriptor>hold</descriptor>
+			<descriptor>d</descriptor>
+			<descriptor>until complete</descriptor>
+			<descriptor>0</descriptor>
+		</output>
+	</gesture>
+	<gesture name="Left Side" timeout="0" enabled="true" outputloop="false" outputtimeout="0">
+		<input type="0">
+			<descriptor>lean</descriptor>
+			<descriptor>left</descriptor>
+			<descriptor>at least</descriptor>
+			<descriptor>5</descriptor>
+			<descriptor>degrees</descriptor>
+		</input>
+		<output type="0">
+			<descriptor>hold</descriptor>
+			<descriptor>q</descriptor>
+			<descriptor>until complete</descriptor>
+			<descriptor>0</descriptor>
+		</output>
+	</gesture>
+	<gesture name="back" timeout="0" enabled="true" outputloop="false" outputtimeout="0">
+		<input type="0">
+			<descriptor>lean</descriptor>
+			<descriptor>backward</descriptor>
+			<descriptor>at least</descriptor>
+			<descriptor>5</descriptor>
+			<descriptor>degrees</descriptor>
+		</input>
+		<output type="0">
+			<descriptor>hold</descriptor>
+			<descriptor>s</descriptor>
+			<descriptor>until complete</descriptor>
+			<descriptor>0</descriptor>
+		</output>
+	</gesture>
+	<gesture name="before" timeout="0" enabled="true" outputloop="false" outputtimeout="0">
+		<input type="1">
+			<descriptor>left foot</descriptor>
+			<descriptor>in front of</descriptor>
+			<descriptor>torso</descriptor>
+			<descriptor>at least</descriptor>
+			<descriptor>25</descriptor>
 			<descriptor>centimeters</descriptor>
 		</input>
 		<output type="0">
-			<descriptor>press</descriptor>
-			<descriptor>w</descriptor>
-			<descriptor>for</descriptor>
-			<descriptor>0</descriptor>
-		</output>
-	</gesture>
-	<gesture name="Run" timeout="0" enabled="false" outputloop="true" outputtimeout="0">
-		<input type="1">
-			<descriptor>right foot</descriptor>
-			<descriptor>in front of</descriptor>
-			<descriptor>waist</descriptor>
-			<descriptor>at least</descriptor>
-			<descriptor>10</descriptor>
-			<descriptor>centimeters</descriptor>
-		</input>
-		<output type="0">
-			<descriptor>press</descriptor>
-			<descriptor>left_alt</descriptor>
-			<descriptor>for</descriptor>
-			<descriptor>0</descriptor>
-		</output>
-	</gesture>
-	<gesture name="Look Left" timeout="0" enabled="true" outputloop="true" outputtimeout="0">
-		<input type="1">
-			<descriptor>head</descriptor>
-			<descriptor>to the left of</descriptor>
-			<descriptor>neck</descriptor>
-			<descriptor>at least</descriptor>
-			<descriptor>3</descriptor>
-			<descriptor>centimeters</descriptor>
-		</input>
-		<output type="4">
-			<descriptor>by relative distance</descriptor>
-			<descriptor>-20</descriptor>
-			<descriptor>0</descriptor>
-		</output>
-	</gesture>
-	<gesture name="Look Right" timeout="0" enabled="true" outputloop="true" outputtimeout="0">
-		<input type="1">
-			<descriptor>head</descriptor>
-			<descriptor>to the right of</descriptor>
-			<descriptor>neck</descriptor>
-			<descriptor>at least</descriptor>
-			<descriptor>3</descriptor>
-			<descriptor>centimeters</descriptor>
-		</input>
-		<output type="4">
-			<descriptor>by relative distance</descriptor>
-			<descriptor>20</descriptor>
-			<descriptor>0</descriptor>
+			<descriptor>hold</descriptor>
+			<descriptor>z</descriptor>
+			<descriptor>until complete</descriptor>
+			<descriptor>1</descriptor>
 		</output>
 	</gesture>
 	<gesture name="Jump" timeout="0" enabled="true" outputloop="false" outputtimeout="0">
@@ -95,36 +98,80 @@
 		<output type="0">
 			<descriptor>press</descriptor>
 			<descriptor>space</descriptor>
-			<descriptor>for</descriptor>
+			<descriptor>until complete</descriptor>
 			<descriptor>0</descriptor>
 		</output>
 	</gesture>
-	<gesture name="ShootAttack" timeout="0" enabled="true" outputloop="false" outputtimeout="0">
+	<gesture name="Crouch" timeout="0" enabled="true" outputloop="false" outputtimeout="0">
+		<input type="2">
+			<descriptor>left leg</descriptor>
+			<descriptor>at least</descriptor>
+			<descriptor>90</descriptor>
+			<descriptor>degrees</descriptor>
+		</input>
+		<output type="0">
+			<descriptor>hold</descriptor>
+			<descriptor>left_control</descriptor>
+			<descriptor>until complete</descriptor>
+			<descriptor>0</descriptor>
+		</output>
+	</gesture>
+	<gesture name="sprint" timeout="0" enabled="true" outputloop="false" outputtimeout="0">
+		<input type="1">
+			<descriptor>right hand</descriptor>
+			<descriptor>behind</descriptor>
+			<descriptor>right knee</descriptor>
+			<descriptor>at least</descriptor>
+			<descriptor>15</descriptor>
+			<descriptor>centimeters</descriptor>
+		</input>
+		<input type="1">
+			<descriptor>left hand</descriptor>
+			<descriptor>behind</descriptor>
+			<descriptor>left knee</descriptor>
+			<descriptor>at least</descriptor>
+			<descriptor>15</descriptor>
+			<descriptor>centimeters</descriptor>
+		</input>
+		<output type="0">
+			<descriptor>hold</descriptor>
+			<descriptor>left_shift</descriptor>
+			<descriptor>until complete</descriptor>
+			<descriptor>0</descriptor>
+		</output>
+	</gesture>
+	<gesture name="Right click" timeout="0" enabled="true" outputloop="false" outputtimeout="0">
+		<input type="1">
+			<descriptor>left hand</descriptor>
+			<descriptor>in front of</descriptor>
+			<descriptor>left shoulder</descriptor>
+			<descriptor>at least</descriptor>
+			<descriptor>50</descriptor>
+			<descriptor>centimeters</descriptor>
+		</input>
+		<output type="0">
+			<descriptor>hold</descriptor>
+			<descriptor>b</descriptor>
+			<descriptor>until complete</descriptor>
+			<descriptor>0</descriptor>
+		</output>
+	</gesture>
+	<gesture name="lect click" timeout="0" enabled="true" outputloop="false" outputtimeout="0">
 		<input type="1">
 			<descriptor>right hand</descriptor>
 			<descriptor>in front of</descriptor>
-			<descriptor>torso</descriptor>
+			<descriptor>right shoulder</descriptor>
 			<descriptor>at least</descriptor>
-			<descriptor>15</descriptor>
+			<descriptor>50</descriptor>
 			<descriptor>centimeters</descriptor>
 		</input>
-		<output type="2">
-			<descriptor>press</descriptor>
-			<descriptor>left button</descriptor>
-			<descriptor>for</descriptor>
+		<output type="0">
+			<descriptor>hold</descriptor>
+			<descriptor>n</descriptor>
+			<descriptor>until complete</descriptor>
 			<descriptor>0</descriptor>
 		</output>
 	</gesture>
-	<gesture name="Interact" timeout="0" enabled="true" outputloop="false" outputtimeout="0">
-		<input type="1">
-			<descriptor>left hand</descriptor>
-			<descriptor>above</descriptor>
-			<descriptor>head</descriptor>
-			<descriptor>at least</descriptor>
-			<descriptor>15</descriptor>
-			<descriptor>centimeters</descriptor>
-		</input>
-	</gesture>
 </gestures>
 <plugins/>
-//21312
+
